@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_04_221841) do
 
   create_table "recipes", force: :cascade do |t|
@@ -21,6 +22,22 @@ ActiveRecord::Schema.define(version: 2020_05_04_221841) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password"
+=======
+ActiveRecord::Schema.define(version: 2020_05_04_225058) do
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "drink_id"
+    t.integer "user_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+>>>>>>> 2347294de8c8c8295303ce1cfce80eb3c0485678
   end
 
 end
