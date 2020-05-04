@@ -64,7 +64,6 @@ Extra Reading:
 
 
 
-
 1. Models
     F-drink
         -name
@@ -111,5 +110,4 @@ Extra Reading:
 
     #favorite_drinks
         -lists all of users favorite drinks
-
 
