@@ -1,4 +1,4 @@
-# ActiveRecord Associations
+<!-- # ActiveRecord Associations
 
 ### LGs:
 - [ ] **Practice with ActiveRecord::Base instance and class methods**
@@ -59,4 +59,57 @@ Extra Reading:
     * Specifically, looking up documentation for ActiveRecord
     * Migrations
     * Association Macros
-    * Rake tasks
+    * Rake tasks -->
+
+
+
+
+
+1. Models
+    F-drink
+        -name
+        -description 
+
+    Y-recipie
+        -drink_id
+        -ingredient_id's
+        -instructions
+
+    F-ingredients
+        -name
+
+
+    Y-users
+        -name
+        -password
+
+    F-favorites
+        -user_id
+        -drink_id's
+
+
+
+
+2. Functions
+
+    General
+
+    .Search_by_ingredients
+        -find recipies that match chosen ingredients
+
+    .crud
+        -crud a new drink into database
+
+
+    User 
+
+    #Create_User
+        -creates a new user and password
+
+    #save_drink_to_favorites
+        -saves drink to users favorite
+
+    #favorite_drinks
+        -lists all of users favorite drinks
+
+
