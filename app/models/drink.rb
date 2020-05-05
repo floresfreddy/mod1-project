@@ -1,4 +1,4 @@
-class Drinks < ActiveRecord::Base
+class Drink < ActiveRecord::Base
     has_many :recipies
     has_many :ingredients, through: :recipies
 
