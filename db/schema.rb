@@ -11,10 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_05_032901) do
 =======
 ActiveRecord::Schema.define(version: 2020_05_04_225058) do
 >>>>>>> refs/remotes/origin/master
+=======
+ActiveRecord::Schema.define(version: 2020_05_05_032901) do
+ActiveRecord::Schema.define(version: 2020_05_04_225058) do
+>>>>>>> yannickdjoumbi
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
@@ -40,9 +45,13 @@ ActiveRecord::Schema.define(version: 2020_05_04_225058) do
     t.string "name"
     t.string "password"
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.string "favorites"
 =======
 >>>>>>> refs/remotes/origin/master
+=======
+    t.string "favorites"
+>>>>>>> yannickdjoumbi
   end
 
 end
