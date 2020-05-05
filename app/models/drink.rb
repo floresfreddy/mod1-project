@@ -1,6 +1,6 @@
 class Drink < ActiveRecord::Base
-    has_many :recipies
-    has_many :ingredients, through: :recipies
+    has_many :recipes
+    has_many :ingredients, through: :recipes
 
     # def reviews
     #     Review.all.select{|review| review.bakery_id == self.id}
