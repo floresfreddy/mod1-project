@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-    belongs_to :drinks
-    belongs_to :ingredients
+    has_many :favorites
+    has_many :users, through: :favorites
     
 end

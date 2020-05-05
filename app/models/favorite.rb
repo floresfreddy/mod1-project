@@ -1,4 +1,4 @@
 class Favorite < ActiveRecord::Base
-    has_many :drinks
-    belongs_to :user
+    belongs_to :recipes
+    belongs_to :users
 end
