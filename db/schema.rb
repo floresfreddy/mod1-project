@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_05_032901) do
+=======
+ActiveRecord::Schema.define(version: 2020_05_04_225058) do
+>>>>>>> refs/remotes/origin/master
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
@@ -35,7 +39,10 @@ ActiveRecord::Schema.define(version: 2020_05_05_032901) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password"
+<<<<<<< HEAD
     t.string "favorites"
+=======
+>>>>>>> refs/remotes/origin/master
   end
 
 end
