@@ -33,13 +33,8 @@ r4 = Recipe.create(name:"long island", taste:"sweet")
 file = File.read('cocktails.json')
 data_hash = JSON.parse(file)
 data_hash.each do |r| 
-<<<<<<< HEAD
-    ing = r["ingredients"].map{|i| i["ingredient"]} 
-    Recipe.create(name: r["name"], taste: r["taste"], ingredients: ing)
-=======
     ing = r["ingredients"].map{|i| i["ingredient"]}.join("  ")
     Recipe.create(name: r["name"], taste: r["taste"], ingredients: ing )
->>>>>>> 95a3fee850016c9eb3f98cfcea506086aac1ebd7
 end
 
 # creating favorite drinks with combine a user and and recipe for test
