@@ -1,3 +1,5 @@
+require 'tty-prompt'
+
 def welcome
     system "clear" 
     puts "Welcome to The Drink"
@@ -11,6 +13,7 @@ def get_user_name
   elsif choice.start_with?("y")
     create_user_name
   else
+    puts 
     puts "Please enter (y)es or (n)o:"
     get_user_name
   end 
@@ -42,7 +45,7 @@ def get_user_name_from_db
         create_user_name
       else
         puts "Invalid option/choice"
-        get_user_name_from_db
+        get_user_name
       end
     end
   end
@@ -64,20 +67,16 @@ def get_user_name_from_db
     puts "1. search again"
     puts "2. create new user"
     choice = gets.chomp
-    istrue = true
-    while istrue
-      case choice
-      when "1"
-        get_user_name_from_db
-        istrue = false
-      when "2"
-        create_user_name
-        istrue = false
-      else
-        puts "Please select either 1 or 2"
-        user_equals_nil
-      end
+    if choice == "1"
+      get_user_name_from_db
+    elsif choice == "2"
+      create_user_name
+    else
+      puts
+      puts "Please select either 1 or 2"
+      user_equals_nil
     end
+    
   end
 
 
