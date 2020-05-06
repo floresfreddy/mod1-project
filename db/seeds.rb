@@ -1,3 +1,4 @@
+
 require 'pry'
 require 'httparty'
 require 'json'
@@ -26,7 +27,6 @@ f3 = Favorite.create [recipe_id:111, user_id:7]
 f4 = Favorite.create [recipe_id:106, user_id:9]
 f5 = Favorite.create [recipe_id:102, user_id:10]
 f6 = Favorite.create [recipe_id:101, user_id:6]
-
 
 
 
