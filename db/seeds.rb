@@ -8,43 +8,28 @@ User.destroy_all
 Favorite.destroy_all
 
 # values to test for users 
-u1 = User.create(name: "freddy")
-u2 = User.create(name: "Hector")
-u3 = User.create(name: "Michael")
-u4 = User.create(name: "Jennifer")
-u5 = User.create(name: "Sarah")
-
-
-# values to test for recipies
-
-r1 = Recipe.create(name:"whiskey", taste:"fire")
-r2 = Recipe.create(name:"lemon", taste:"sour")
-r3 = Recipe.create(name:"daquiri", taste:"sweet")
-r4 = Recipe.create(name:"long island", taste:"sweet")
-
+u1 = User.create [name: "Angelo"]
+u2 = User.create [name: "Hector"]
+u3 = User.create [name: "Michael"]
+u4 = User.create [name: "Jennifer"]
+u5 = User.create [name: "Sarah"]
 
 # API library is used to collect all recipes 
-# file = File.read('cocktails.json')
-# data_hash = JSON.parse(file)
-# data_hash.each do |r| r1 = Recipe.create(name: r["name"], taste: r["taste"], ingredients: r["ingredients"])
-# end
-
-
 file = File.read('cocktails.json')
 data_hash = JSON.parse(file)
 data_hash.each do |r| 
     ing = r["ingredients"].map{|i| i["ingredient"]}.join("  ")
+    1ing = ing.flatten.join(" ")
     Recipe.create(name: r["name"], taste: r["taste"], ingredients: ing )
 end
 
-# creating favorite drinks with combine a user and and recipe for test
-
-Favorite.create(recipe_id:r1.id, user_id:u1.id)
-Favorite.create(recipe_id:r2.id, user_id:u1.id)
-Favorite.create(recipe_id:r3.id, user_id:u1.id)
-Favorite.create(recipe_id:r4.id, user_id:u1.id)
-
-
+# creating favorite drinks with combine a user and and recipe
+f1 = Favorite.create [recipe_id:100, user_id:6]
+f2 = Favorite.create [recipe_id:105, user_id:8]
+f3 = Favorite.create [recipe_id:111, user_id:7]
+f4 = Favorite.create [recipe_id:106, user_id:9]
+f5 = Favorite.create [recipe_id:102, user_id:10]
+f6 = Favorite.create [recipe_id:101, user_id:6]
 
 
 
