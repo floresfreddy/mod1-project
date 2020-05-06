@@ -12,23 +12,19 @@ end
 def get_ingredient_from_user
     prompt = TTY::Prompt.new
     ingredient = prompt.ask "Welcome, please enter the name of an ingredient:"
-    p ingredient
+    ingredient.downcase
 end
 
 def create_recipe_array(ingredient)
-#new_arr = []
-Recipe.select {|k,v| recipe.include?(k)}
-    #Recipe.all.select do |recipe|
-        #r.ingredients.split(",").find do |i|
-    #binding.pry
-            #if i.strip == ingredient ||
-            #i.strip == (ingredient + " ") ||
-            #i.strip == (" " + ingredient)
-            #new_arr << recipe
-            #end
-        #end
+    new_arr = []
+    Recipe.all.select do |recipe|
+        recipe.ingredients.all.select do |k,v|
+            if k == ingredient
+                new_arr << v
+            end 
+        end
     end
-#new_arr.uniq
-end
+    return new_arr
+  end
 
 

@@ -17,7 +17,9 @@ u5 = User.create [name: "Sarah"]
 # API library is used to collect all recipes 
 file = File.read('cocktails.json')
 data_hash = JSON.parse(file)
-data_hash.each do |r| r1 = Recipe.create(name: r["name"], taste: r["taste"], ingredients: r["ingredients"])
+data_hash.each do |r| 
+    ing = r["ingredients"].map{|i| i["ingredient"]} 
+    Recipe.create(name: r["name"], taste: r["taste"], ingredients: ing)
 end
 
 # creating favorite drinks with combine a user and and recipe
