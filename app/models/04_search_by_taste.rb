@@ -6,13 +6,7 @@ def search_by_taste
     tm = taste_menu
     taste_menu_selection(tm,selected_taste)
     main_menu
-    #ingredient = get_ingredient_from_user
-    #recipe_array = create_recipe_array(ingredient)
-    #limit = get_recipe_limit(recipe_array, ingredient)
-    #selected_recipes = view_recipes(recipe_array, limit)
-    #rms = recipe_menu
-    #recipe_menu_selection(rms, selected_recipes)
-    #main_menu
+    
   end
   
   def get_taste_from_user
@@ -23,15 +17,6 @@ def search_by_taste
   
   def create_taste_array(user_taste)
     arr = []
-    # Recipe.all.select do |recipe|
-    #   recipe.ingredients.split(",").find do |ing|
-    #     if ing.strip == ingredient ||
-    #       ing.strip == (ingredient + " ") ||
-    #       ing.strip == (" " + ingredient)
-    #       arr << recipe
-    #     end
-    #   end
-    # end
     arr = Recipe.all.select do |r|
         r.taste.downcase.include?(user_taste)
         end
@@ -45,11 +30,7 @@ def search_by_taste
       puts "Let's try again..."
       search_by_taste
     end
-                            # puts <<~TEXT
-                            # There are #{recipe_array.length} recipes that include #{ingredient}.
-                            # How many would you like to view?
-                            # TEXT
-                            # choice = gets.chomp.to_i
+                      
     puts <<~TEXT
     There are #{taste_array.length} drink corresponding to your taste.
     TEXT
@@ -71,7 +52,6 @@ def search_by_taste
      puts
     puts "#{i+1}. #{t.name}"
      puts "#{t.taste}"
-      #sleep(0.2)
     end
   end
   
@@ -87,12 +67,12 @@ def search_by_taste
   def taste_menu_selection(choice, selected_taste=nil)
     case choice
     when "0"
-                       # return to main menu
+    # return to main menu
       false
     when "1", "save"
-                        # save a recipe to favorites
-      save_to_favorites(selected_taste)
-      true
+    # save a recipe to favorites
+     save_to_favorites(selected_taste)
+     true
     else
       puts "Invalid choice!"
       true
@@ -100,7 +80,7 @@ def search_by_taste
   end
   
   def in_user_favorites?(recipe)
-                    # checks user's favorites to make sure it hasn't been added yet
+    # checks user's favorites to make sure it hasn't been added yet
     $user.favorites.each do |f|
       if f.recipe_id == recipe.id
          return true
@@ -144,6 +124,6 @@ def search_by_taste
   
 end
 
-  #
+  
 
   
