@@ -119,11 +119,14 @@ end
       create_recipe
     when "6"
       kill_music
+      system 'clear'
       main_menu
     when "7"
       play_music
+      system 'clear'
       main_menu
     else
+      system 'clear'
       puts
       puts "Invalid input!"
       main_menu
