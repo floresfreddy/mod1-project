@@ -3,7 +3,7 @@ require 'tty-prompt'
 def welcome
     system "clear" 
     puts art
-    puts "Welcome to The Drink"
+    puts "Welcome to Drink"
 end
 
 def get_user_name
