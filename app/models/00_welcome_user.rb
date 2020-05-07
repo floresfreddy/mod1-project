@@ -110,5 +110,6 @@ def main_menu
     else
       puts
       puts "Invalid input!"
+      main_menu
     end
   end

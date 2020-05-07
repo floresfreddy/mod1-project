@@ -17,10 +17,10 @@ u5 = User.create(name: "Sarah")
 
 # values to test for recipies
 
-r1 = Recipe.create(name:"whiskey", taste:"fire")
-r2 = Recipe.create(name:"lemon", taste:"sour")
-r3 = Recipe.create(name:"daquiri", taste:"sweet")
-r4 = Recipe.create(name:"long island", taste:"sweet")
+r1 = Recipe.create(name:"whiskey", taste:"fire", ingredients: "whiskey")
+r2 = Recipe.create(name:"lemon sour", taste:"sour", ingredients: "lemon")
+r3 = Recipe.create(name:"freddy.daquiri", taste:"sweet", ingredients:"sweet stuff")
+r4 = Recipe.create(name:"long island", taste:"sweet", ingredients: "tea and stuff")
 
 
 # API library is used to collect all recipes 
@@ -33,7 +33,7 @@ r4 = Recipe.create(name:"long island", taste:"sweet")
 file = File.read('cocktails.json')
 data_hash = JSON.parse(file)
 data_hash.each do |r| 
-    ing = r["ingredients"].map{|i| i["ingredient"]}.join("  ")
+    ing = r["ingredients"].map{|i| i["ingredient"]}.join(", ")
     Recipe.create(name: r["name"], taste: r["taste"], ingredients: ing )
 end
 
