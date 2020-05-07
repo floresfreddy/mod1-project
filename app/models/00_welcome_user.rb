@@ -91,6 +91,8 @@ def main_menu
     puts "1. search for a drink by ingredient"
     puts "2. view your favorite drinks"
     puts "3. delete a drink from your favorites"
+    puts "4. search for a drink by taste"
+    
     choice = gets.chomp
     menu_selection(choice)
   end
@@ -108,6 +110,8 @@ def main_menu
       view_user_favorites
     when "3"
       get_recipe_to_delete
+    when "4"
+      search_by_taste
     else
       puts
       puts "Invalid input!"
