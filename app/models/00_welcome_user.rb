@@ -93,6 +93,8 @@ end
     puts "3. delete a drink from your favorites"
     puts "4. search by taste"
     puts "5. create a new drink"
+    puts
+    puts "MUSIC"
     puts "6. stop music"
     puts "7. play music"
     choice = gets.chomp

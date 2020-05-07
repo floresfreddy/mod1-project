@@ -1,4 +1,5 @@
 def play_music
+
     
     pid = fork{ exec 'afplay', "bin/Tequila.mp3" }
     # pid = fork{ system 'afplay -v 0.5', 'bin/Tequila.mp3' }
@@ -6,6 +7,7 @@ def play_music
     pid
 
     $play = true
+
 
     
 
