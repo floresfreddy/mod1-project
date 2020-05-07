@@ -7,6 +7,7 @@ def get_recipe_to_delete
         puts
         puts "Drink Deleted!"
         $user.delete_favorite(fav_to_delete)
+        sleep(0.2)
         main_menu
     end
   end
@@ -19,7 +20,7 @@ def get_recipe_to_delete
       puts "#{i+1}. #{recipe.name}"
     end
     puts
-    print "Which recipe would you like to remove from favorites? "
+    print "Which drink would you like to remove from favorites? "
     rec_num = gets.chomp.to_i
     if rec_num > $user.favorites.length
         puts "Invalid Choice"
