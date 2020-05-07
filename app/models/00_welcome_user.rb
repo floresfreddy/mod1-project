@@ -2,6 +2,7 @@ require 'tty-prompt'
 
 def welcome
     system "clear" 
+    puts art
     puts "Welcome to The Drink"
 end
 
