@@ -2,7 +2,8 @@ require 'tty-prompt'
 
 def welcome
     system "clear" 
-    puts "Welcome to The Drink"
+    puts art
+    puts "Welcome to Drink"
 end
 
 def get_user_name
@@ -19,7 +20,7 @@ def get_user_name
   end 
 end
 
-def get_user_name_from_db
+  def get_user_name_from_db
     puts
     print "Please enter your username: "
     name = gets.chomp
@@ -110,5 +111,6 @@ def main_menu
     else
       puts
       puts "Invalid input!"
+      main_menu
     end
   end
