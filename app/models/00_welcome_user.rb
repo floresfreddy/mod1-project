@@ -91,12 +91,17 @@ end
     puts "1. search for a drink by ingredient"
     puts "2. view your favorite drinks"
     puts "3. delete a drink from your favorites"
+<<<<<<< HEAD
+    puts "4. search for a drink by taste"
+    
+=======
     puts "4. search by taste"
     puts "5. create a new drink"
     puts
     puts "MUSIC"
     puts "6. stop music"
     puts "7. play music"
+>>>>>>> e8b934cf9126f3a143e478dab41b1b9b237870fe
     choice = gets.chomp
     menu_selection(choice)
   end
@@ -115,6 +120,10 @@ end
       view_user_favorites
     when "3"
       get_recipe_to_delete
+<<<<<<< HEAD
+    when "4"
+      search_by_taste
+=======
     when "5"
       create_recipe
     when "6"
@@ -125,6 +134,7 @@ end
       play_music
       system 'clear'
       main_menu
+>>>>>>> e8b934cf9126f3a143e478dab41b1b9b237870fe
     else
       system 'clear'
       puts
