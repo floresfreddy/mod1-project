@@ -35,10 +35,13 @@ def view_user_favorites
     main_menu
   else
     puts
-    puts "Here are your favorite recipes:"
+    puts "Here are your favorite drinks:"
     i = 1
     faves.each do |fave|
       puts "#{i}. #{fave.recipe.name}"
+      puts "   Taste-#{fave.recipe.taste}"
+      puts "   Ingredients- #{fave.recipe.ingredients} "
+      puts
       i += 1
       sleep(0.2)
     end
