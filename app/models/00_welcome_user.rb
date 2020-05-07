@@ -20,7 +20,7 @@ def get_user_name
   end 
 end
 
-def get_user_name_from_db
+  def get_user_name_from_db
     puts
     print "Please enter your username: "
     name = gets.chomp
