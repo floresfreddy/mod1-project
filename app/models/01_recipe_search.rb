@@ -66,15 +66,6 @@ end
   
   def create_recipe_array(ingredient)
     arr = []
-    # Recipe.all.select do |recipe|
-    #   recipe.ingredients.split(",").find do |ing|
-    #     if ing.strip == ingredient ||
-    #       ing.strip == (ingredient + " ") ||
-    #       ing.strip == (" " + ingredient)
-    #       arr << recipe
-    #     end
-    #   end
-    # end
     arr = Recipe.all.select do |r|
         r.ingredients.downcase.include?(ingredient)
         end
@@ -90,6 +81,7 @@ end
       recipe_search
     end
 <<<<<<< HEAD
+<<<<<<< HEAD
     puts <<~TEXT
     There are #{recipe_array.length} recipes that include #{ingredient}.
     How many would you like to view?
@@ -101,6 +93,9 @@ end
     # How many would you like to view?
     # TEXT
     # choice = gets.chomp.to_i
+=======
+    
+>>>>>>> master
     puts <<~TEXT
     There are #{recipe_array.length} drinks that include #{ingredient}.
     TEXT
@@ -165,6 +160,8 @@ def recipe_menu_selection(choice, selected_recipes=nil)
       save_to_favorites(selected_recipes)
       true
     else
+        system 'clear'
+      puts
       puts "Invalid choice!"
       true
     end
@@ -226,7 +223,9 @@ def save_to_favorites(selected_recipes)
           puts "Returning to main menu..."
           isrunning = false
         else
+            system 'clear'
           puts "Invalid input!"
+
         end
       end
     end

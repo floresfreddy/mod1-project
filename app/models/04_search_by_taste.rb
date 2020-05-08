@@ -10,8 +10,9 @@ def search_by_taste
   end
   
   def get_taste_from_user
+    tastes = Recipe.all.map{|r| r.taste}.uniq.join(", ")
     puts
-    puts "Please enter a taste:"
+    puts "Please enter a taste:  (#{tastes})"
     user_taste = gets.chomp.downcase
   end
   
@@ -51,7 +52,7 @@ def search_by_taste
     taste_array[0...taste_limit.to_i].each_with_index do |t, i|
      puts
     puts "#{i+1}. #{t.name}"
-     puts "#{t.taste}"
+     puts "taste - #{t.taste}"
     end
   end
   
