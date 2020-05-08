@@ -1,8 +1,9 @@
 def play_music
 
     
-    pid = fork{ exec 'afplay', "bin/Tequila.mp3" }
-    # pid = fork{ system 'afplay -v 0.5', 'bin/Tequila.mp3' }
+    # pid = fork{ exec 'afplay -v 1', "$ bin/Tequila.mp3 -v 1" }
+
+    pid = fork{ exec "afplay -v .2 bin/Tequila.mp3" }
 
     pid
 
