@@ -85,7 +85,7 @@ end
   def get_recipe_limit(recipe_array, ingredient)
     puts
     if recipe_array.empty?
-      puts "Sorry, there are no recipes with #{ingredient}!"
+      puts "Sorry, there are no drinks with #{ingredient}!"
       puts "Let's try again..."
       recipe_search
     end
@@ -102,14 +102,14 @@ end
     # TEXT
     # choice = gets.chomp.to_i
     puts <<~TEXT
-    There are #{recipe_array.length} recipes that include #{ingredient}.
+    There are #{recipe_array.length} drinks that include #{ingredient}.
     TEXT
     choice = recipe_array.length
 >>>>>>> master
   
     if choice > recipe_array.length
       puts
-      puts "Oops! There are only #{recipe_array.length} recipes!"
+      puts "Oops! There are only #{recipe_array.length} drinks!"
       choice = recipe_array.length
     else
       choice
@@ -145,7 +145,7 @@ def recipe_menu
     puts
     puts "Please choose one:"
     puts "0. Return to main menu"
-    puts "1. Save a recipe to favorites"
+    puts "1. Save a drink to favorites"
     choice = gets.chomp
 <<<<<<< HEAD
 end
@@ -198,7 +198,7 @@ def save_to_favorites(selected_recipes)
     isrunning = true
     while isrunning
       puts
-      puts "Which recipe would you like to save? Type the number (q to quit):"
+      puts "Which drink would you like to save? Type the number (q to quit):"
       choice = gets.chomp
       if choice.start_with?("q")
         break
@@ -207,7 +207,7 @@ def save_to_favorites(selected_recipes)
   
       if in_user_favorites?(recipe)
         puts
-        puts "You've already added this recipe to your favorites!"
+        puts "You've already added this drink to your favorites!"
         next
       else
         puts

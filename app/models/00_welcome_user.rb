@@ -57,7 +57,7 @@ end
     name = gets.chomp
     validate_user_name(name)
     puts
-    puts "Welcome to The Drink, #{name}!"
+    puts "Welcome to Drink, #{name}!"
     User.create(name: name)
   end
 
@@ -84,13 +84,24 @@ end
 # MAKING THE MENU 
 
 
-def main_menu
+  def main_menu
     puts
     puts "MAIN MENU"
     puts "0. exit"
     puts "1. search for a drink by ingredient"
     puts "2. view your favorite drinks"
     puts "3. delete a drink from your favorites"
+<<<<<<< HEAD
+    puts "4. search for a drink by taste"
+    
+=======
+    puts "4. search by taste"
+    puts "5. create a new drink"
+    puts
+    puts "MUSIC"
+    puts "6. stop music"
+    puts "7. play music"
+>>>>>>> e8b934cf9126f3a143e478dab41b1b9b237870fe
     choice = gets.chomp
     menu_selection(choice)
   end
@@ -98,8 +109,9 @@ def main_menu
   def menu_selection(choice)
     case choice
     when "0", "exit"
+      kill_music
       puts
-      puts "Goodbye #{$user.name}! Happy cooking!"
+      puts "Goodbye #{$user.name}! Drink Responsibly!"
     when "1", "search"
       # search for a recipe by ingredient
       recipe_search
@@ -108,6 +120,19 @@ def main_menu
       view_user_favorites
     when "3"
       get_recipe_to_delete
+<<<<<<< HEAD
+    when "4"
+      search_by_taste
+=======
+    when "5"
+      create_recipe
+    when "6"
+      kill_music
+      main_menu
+    when "7"
+      play_music
+      main_menu
+>>>>>>> e8b934cf9126f3a143e478dab41b1b9b237870fe
     else
       puts
       puts "Invalid input!"

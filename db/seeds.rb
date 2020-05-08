@@ -10,7 +10,7 @@ Favorite.destroy_all
 # values to test for users 
 
 u1 = User.create(name: "freddy")
-u2 = User.create(name: "Hector")
+u2 = User.create(name: "Yannick")
 u3 = User.create(name: "Michael")
 u4 = User.create(name: "Jennifer")
 u5 = User.create(name: "Sarah")
