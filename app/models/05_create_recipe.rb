@@ -19,6 +19,8 @@ def create_recipe
     choice = gets.chomp.downcase
     if choice.start_with?("y")
         $user.add_favorite(r1)
+        puts
+        system 'clear'
         puts "Drink added to favorites!"
         puts 
         main_menu

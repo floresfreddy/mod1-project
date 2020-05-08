@@ -104,6 +104,7 @@ def save_to_favorites(selected_recipes)
       puts "Which drink would you like to save? Type the number (q to quit):"
       choice = gets.chomp
       if choice.start_with?("q")
+        system 'clear'
         break
       end
       recipe = selected_recipes[choice.to_i - 1]

@@ -4,6 +4,7 @@ def get_recipe_to_delete
     if fav_to_delete == 0
         main_menu
     else
+        system 'clear'
         puts
         puts "Drink Deleted!"
         $user.delete_favorite(fav_to_delete)

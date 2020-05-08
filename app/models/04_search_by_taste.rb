@@ -53,6 +53,7 @@ def search_by_taste
      puts
     puts "#{i+1}. #{t.name}"
      puts "taste - #{t.taste}"
+     sleep(0.2)
     end
   end
   
@@ -69,6 +70,7 @@ def search_by_taste
     case choice
     when "0"
     # return to main menu
+      system 'clear'
       false
     when "1", "save"
     # save a recipe to favorites
@@ -97,6 +99,7 @@ def search_by_taste
       puts "Which Drink would you like to save? Type the number (q to quit):"
       choice = gets.chomp
       if choice.start_with?("q")
+        system 'clear'
         break
       end
       recipe = selected_taste[choice.to_i - 1]

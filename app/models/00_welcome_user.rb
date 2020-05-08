@@ -3,7 +3,7 @@ require 'tty-prompt'
 def welcome
     system "clear" 
     puts art
-    puts "Welcome to Drink"
+    puts "Welcome to Drinks"
 end
 
 def get_user_name
@@ -28,6 +28,7 @@ end
     if user == nil
       user_equals_nil
     else
+      system 'clear'
       puts
       puts "Welcome back, #{user.name}!"
       return user
@@ -56,8 +57,9 @@ end
     print "Create username: "
     name = gets.chomp
     validate_user_name(name)
+    system 'clear'
     puts
-    puts "Welcome to Drink, #{name}!"
+    puts "Welcome to Drinks, #{name}!"
     User.create(name: name)
   end
 
@@ -87,16 +89,16 @@ end
   def main_menu
     puts
     puts "MAIN MENU"
-    puts "0. exit"
     puts "1. search for a drink by ingredient"
     puts "2. search for a drink by taste"
     puts "3. view your favorite drinks"
     puts "4. delete a drink from your favorites"
     puts "5. create a new drink"
     puts
-    puts "MUSIC"
     puts "6. stop music"
     puts "7. play music"
+    puts
+    puts "0. exit"
     puts
     puts "select(0..7)"
     choice = gets.chomp
@@ -121,6 +123,7 @@ end
       get_recipe_to_delete
     
     when "5"
+      system 'clear'
       create_recipe
     when "6"
       kill_music
