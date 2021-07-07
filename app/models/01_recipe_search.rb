@@ -2,37 +2,41 @@ require 'pry'
 
 
 def recipe_search
-    ingredient = get_ingredient_from_user
+  ingredient = get_ingredient_from_user
     recipe_array = create_recipe_array(ingredient)
     limit = get_recipe_limit(recipe_array, ingredient)
     selected_recipes = view_recipes(recipe_array, limit)
     rms = recipe_menu
     recipe_menu_selection(rms, selected_recipes)
     main_menu
-  end
+end
   
-  def get_ingredient_from_user
+def get_ingredient_from_user
     puts
     puts "Please enter an ingredient:"
     ingredient = gets.chomp.downcase
-  end
+end
   
-  def create_recipe_array(ingredient)
+def create_recipe_array(ingredient)
     arr = []
     arr = Recipe.all.select do |r|
         r.ingredients.downcase.include?(ingredient)
         end
     return arr.uniq
-  end
+end
   
-  def get_recipe_limit(recipe_array, ingredient)
+def get_recipe_limit(recipe_array, ingredient)
     puts
     if recipe_array.empty?
       puts "Sorry, there are no drinks with #{ingredient}!"
       puts "Let's try again..."
       recipe_search
     end
-    
+    puts <<~TEXT
+    There are #{recipe_array.length} recipes that include #{ingredient}.
+    How many would you like to view?
+    TEXT
+    choice = gets.chomp.to_i
     puts <<~TEXT
     There are #{recipe_array.length} drinks that include #{ingredient}.
     TEXT
@@ -45,9 +49,9 @@ def recipe_search
     else
       choice
     end
-  end
+end
   
-  def view_recipes(recipe_array, limit)
+def view_recipes(recipe_array, limit)
     puts
     puts "Here you go!"
     recipe_array[0...limit.to_i].each_with_index do |recipe, i|
@@ -56,17 +60,17 @@ def recipe_search
       puts "#{recipe.ingredients}"
       sleep(0.2)
     end
-  end
+end
   
-  def recipe_menu
+def recipe_menu
     puts
     puts "Please choose one:"
     puts "0. Return to main menu"
     puts "1. Save a drink to favorites"
     choice = gets.chomp
-  end
+end
   
-  def recipe_menu_selection(choice, selected_recipes=nil)
+def recipe_menu_selection(choice, selected_recipes=nil)
     case choice
     when "0"
       # return to main menu
@@ -81,9 +85,9 @@ def recipe_search
       puts "Invalid choice!"
       true
     end
-  end
+end
   
-  def in_user_favorites?(recipe)
+def in_user_favorites?(recipe)
     # checks user's favorites to make sure it hasn't been added yet
     $user.favorites.each do |fav|
       if fav.recipe_id == recipe.id
@@ -91,9 +95,9 @@ def recipe_search
       end
     end
     false
-  end
+end
   
-  def save_to_favorites(selected_recipes)
+def save_to_favorites(selected_recipes)
     isrunning = true
     while isrunning
       puts
@@ -129,5 +133,5 @@ def recipe_search
       end
     end
   
-  end
+end
 
